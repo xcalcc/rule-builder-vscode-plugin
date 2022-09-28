@@ -1,0 +1,1 @@
+ASSERT|<fio02: FILE* fopen(const char*,const char*)>|not(is_parm_tainted(arg(1)))|FIO02-C

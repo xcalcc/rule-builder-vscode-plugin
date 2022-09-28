@@ -1,0 +1,15 @@
+*.un~
+rules/**
+**__pycache__**
+tmp/**
+**.jar
+**.o
+**.log
+test/annotation/
+output/
+**.pyc
+.vscode
+**.class
+**.v
+**.vtxt
+**.gz

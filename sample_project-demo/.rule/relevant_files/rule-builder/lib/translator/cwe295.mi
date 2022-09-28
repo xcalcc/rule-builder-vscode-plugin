@@ -1,0 +1,13 @@
+NODE|start|none|this|start
+NODE|org.apache.commons.mail.SimpleEmail: void <init>()|none|this|a
+NODE|org.apache.commons.mail.Email: org.apache.commons.mail.Email setSSLOnConnect(boolean)|arg1==true|this|b
+NODE|org.apache.commons.mail.Email: org.apache.commons.mail.Email setSSLCheckServerIdentity(boolean)|arg1==true|this|c
+NODE|org.apache.commons.mail.Email: java.lang.String send()|none|this|d
+NODE|end|none|this|end
+EDGE|start|a|none
+EDGE|a|b|none
+EDGE|b|c|none
+EDGE|c|d|none
+EDGE|d|end|none
+EDGE|a|d|CWE295
+EDGE|b|d|CWE295

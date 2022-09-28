@@ -1,0 +1,19 @@
+{
+    "rule_set_id": "e5a8b217-8171-4cb2-ac31-ede97fc2c855",
+    "category": "VUL",
+    "vulnerable": "CWE295",
+    "certainty": null,
+    "rule_code": "CWE295",
+    "language": "java",
+    "url": "",
+    "name": "${rule.Xcalibyte.CUSTOMIZED.1.CWE295.name}",
+    "severity": 3,
+    "priority": 1,
+    "likelihood": "LIKELY",
+    "remediation_cost": "LOW",
+    "detail": "${rule.Xcalibyte.CUSTOMIZED.1.CWE295.detail}",
+    "description": "${rule.Xcalibyte.CUSTOMIZED.1.CWE295.description}",
+    "msg_template": "${rule.Xcalibyte.CUSTOMIZED.1.CWE295.msg_template}",
+    "created_by": "system" ,
+    "modified_by": "system"
+}

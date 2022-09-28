@@ -1,0 +1,11 @@
+NODE|START
+NODE|END
+NODE|init
+NODE|state1
+EDGE|START|init|ssd_safe.App: void <init>()|none|this()|none
+EDGE|init|state1|ssd_safe.App: java.lang.String readssd2(java.lang.String)|none|this()|none
+EDGE|state1|END|ssd_safe.App: void checkNonssdata()|none|this()|none
+EDGE|init|END|ssd_safe.App: void checkNonssdata()|none|this()|FUNCROSS
+DEF_ACTION|init|FUNCROSS
+DEF_ACTION|state1|FUNCROSS
+DECLARE|FUNCROSS|CUSTOM|FUNCROSS Example Description

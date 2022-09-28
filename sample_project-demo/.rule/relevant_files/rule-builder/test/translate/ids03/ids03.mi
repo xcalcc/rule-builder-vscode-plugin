@@ -1,0 +1,2 @@
+ASSERT|<java.util.logging.Logger: void severe(java.lang.String)>|is_tag_attr_set(arg(1), "tainted", "sanitize_fmt_str")|IDS03-J
+ASSERT|<java.util.logging.Logger: void info(java.lang.String)>|is_tag_attr_set(arg(1), "tainted", "sanitize_fmt_str")|IDS03-J

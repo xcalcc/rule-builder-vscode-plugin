@@ -1,0 +1,12 @@
+NODE|start|none|this|start
+NODE|ssd_safe.App: void <init>()|none|this|a
+NODE|ssd_safe.App: void checkNonssdata()|none|this|b
+NODE|ssd_safe.App: void checkSsdata()|none|this|c
+NODE|end|none|this|end
+EDGE|start|a|none
+EDGE|a|b|none
+EDGE|b|c|none
+EDGE|c|end|none
+EDGE|a|c|func_in
+EDGE|a|end|func_in
+EDGE|b|end|func_in

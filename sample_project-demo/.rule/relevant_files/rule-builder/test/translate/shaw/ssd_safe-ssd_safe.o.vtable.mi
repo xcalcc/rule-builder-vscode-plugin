@@ -1,0 +1,90 @@
+<ssd_safe.App: void <init>()>|_ZN8ssd_safe3AppC1Ev|V|0|C
+<ssd_safe.App: java.lang.String readssd2(java.lang.String)>|_ZN8ssd_safe3App8readssd2EJPN4java4lang6StringES4_|R|1|I
+<ssd_safe.App: java.lang.String readssd3()>|_ZN8ssd_safe3App8readssd3EJPN4java4lang6StringEv|R|0|I
+<ssd_safe.App: java.lang.String readnonssd2(java.lang.String)>|_ZN8ssd_safe3App11readnonssd2EJPN4java4lang6StringES4_|R|1|I
+<ssd_safe.App: java.lang.String readnonssd3()>|_ZN8ssd_safe3App11readnonssd3EJPN4java4lang6StringEv|R|0|I
+<ssd_safe.App: void checkSsdata()>|_ZN8ssd_safe3App11checkSsdataEJvv|V|0|I
+<ssd_safe.App: void checkNonssdata()>|_ZN8ssd_safe3App14checkNonssdataEJvv|V|0|I
+<ssd_safe.App: void Processend()>|_ZN8ssd_safe3App10ProcessendEJvv|V|0|I
+<ssd_safe.App: void main(java.lang.String[])>|_ZN8ssd_safe3App4mainEJvP6JArrayIPN4java4lang6StringEE|V|1|S
+
+<ssd_safe.checkIPCPipeChild: void <init>()>|_ZN8ssd_safe17checkIPCPipeChildC1Ev|V|0|C
+<ssd_safe.checkIPCPipeChild: void main(java.lang.String)>|_ZN8ssd_safe17checkIPCPipeChild4mainEJvPN4java4lang6StringE|V|1|S
+
+<ssd_safe.checkIPCPipeChild$1: void run()>|_ZN8ssd_safe19checkIPCPipeChild$13runEJvv|V|0|I
+
+<ssd_safe.checkIPCPipeParent: void <init>()>|_ZN8ssd_safe18checkIPCPipeParentC1Ev|V|0|C
+<ssd_safe.checkIPCPipeParent: void main(java.lang.String)>|_ZN8ssd_safe18checkIPCPipeParent4mainEJvPN4java4lang6StringE|V|1|S
+
+<ssd_safe.checkIPCPipeParent$1: void run()>|_ZN8ssd_safe20checkIPCPipeParent$13runEJvv|V|0|I
+
+<ssd_safe.checkIPCSocketChild: void <init>()>|_ZN8ssd_safe19checkIPCSocketChildC1Ev|V|0|C
+<ssd_safe.checkIPCSocketChild: void main(java.lang.String)>|_ZN8ssd_safe19checkIPCSocketChild4mainEJvPN4java4lang6StringE|V|1|S
+
+<ssd_safe.checkIPCSocketParent: void <init>()>|_ZN8ssd_safe20checkIPCSocketParentC1Ev|V|0|C
+<ssd_safe.checkIPCSocketParent: void main(java.lang.String)>|_ZN8ssd_safe20checkIPCSocketParent4mainEJvPN4java4lang6StringE|V|1|S
+
+<ssd_safe.checkIPCSocketParent$1: void run()>|_ZN8ssd_safe22checkIPCSocketParent$13runEJvv|V|0|I
+
+<ssd_safe.checkStorage: void <init>()>|_ZN8ssd_safe12checkStorageC1Ev|V|0|C
+<ssd_safe.checkStorage: void writeFileWithBufferedWriter(java.lang.String)>|_ZN8ssd_safe12checkStorage27writeFileWithBufferedWriterEJvPN4java4lang6StringE|V|1|I
+<ssd_safe.checkStorage: void appendFileWithBufferedWriter(java.lang.String)>|_ZN8ssd_safe12checkStorage28appendFileWithBufferedWriterEJvPN4java4lang6StringE|V|1|I
+<ssd_safe.checkStorage: void writingFileWithPrintWriter(java.lang.String)>|_ZN8ssd_safe12checkStorage26writingFileWithPrintWriterEJvPN4java4lang6StringE|V|1|I
+
+<ssd_safe.checkSystemErr: void <init>()>|_ZN8ssd_safe14checkSystemErrC1Ev|V|0|C
+<ssd_safe.checkSystemErr: void println2Char(byte[],int)>|_ZN8ssd_safe14checkSystemErr12println2CharEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void println2CharArray(byte[],int)>|_ZN8ssd_safe14checkSystemErr17println2CharArrayEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void println2Double(byte[],int)>|_ZN8ssd_safe14checkSystemErr14println2DoubleEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void println2Float(byte[],int)>|_ZN8ssd_safe14checkSystemErr13println2FloatEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void println2Int(byte[],int)>|_ZN8ssd_safe14checkSystemErr11println2IntEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void println2Long(byte[],int)>|_ZN8ssd_safe14checkSystemErr12println2LongEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void println2Object(byte[],int)>|_ZN8ssd_safe14checkSystemErr14println2ObjectEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void println2String(byte[],int)>|_ZN8ssd_safe14checkSystemErr14println2StringEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void print2Object(byte[],int)>|_ZN8ssd_safe14checkSystemErr12print2ObjectEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void print2String(byte[],int)>|_ZN8ssd_safe14checkSystemErr12print2StringEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void print2Boolean(byte[],int)>|_ZN8ssd_safe14checkSystemErr13print2BooleanEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void print2Char(byte[],int)>|_ZN8ssd_safe14checkSystemErr10print2CharEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void print2CharArray(byte[],int)>|_ZN8ssd_safe14checkSystemErr15print2CharArrayEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void print2Double(byte[],int)>|_ZN8ssd_safe14checkSystemErr12print2DoubleEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void print2Float(byte[],int)>|_ZN8ssd_safe14checkSystemErr11print2FloatEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void print2Int(byte[],int)>|_ZN8ssd_safe14checkSystemErr9print2IntEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void print2Long(byte[],int)>|_ZN8ssd_safe14checkSystemErr10print2LongEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void printf2Locale(byte[],int)>|_ZN8ssd_safe14checkSystemErr13printf2LocaleEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void printf2String(byte[],int)>|_ZN8ssd_safe14checkSystemErr13printf2StringEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void write2Byte(byte[],int)>|_ZN8ssd_safe14checkSystemErr10write2ByteEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void write2Byte2(byte[],int)>|_ZN8ssd_safe14checkSystemErr11write2Byte2EJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemErr: void write2Int(byte[],int)>|_ZN8ssd_safe14checkSystemErr9write2IntEJvP6JArrayIcEi|V|2|I
+
+<ssd_safe.checkSystemOut: void <init>()>|_ZN8ssd_safe14checkSystemOutC1Ev|V|0|C
+<ssd_safe.checkSystemOut: void println2Char(byte[],int)>|_ZN8ssd_safe14checkSystemOut12println2CharEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void println2CharArray(byte[],int)>|_ZN8ssd_safe14checkSystemOut17println2CharArrayEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void println2Double(byte[],int)>|_ZN8ssd_safe14checkSystemOut14println2DoubleEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void println2Float(byte[],int)>|_ZN8ssd_safe14checkSystemOut13println2FloatEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void println2Int(byte[],int)>|_ZN8ssd_safe14checkSystemOut11println2IntEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void println2Long(byte[],int)>|_ZN8ssd_safe14checkSystemOut12println2LongEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void println2Object(byte[],int)>|_ZN8ssd_safe14checkSystemOut14println2ObjectEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void println2String(byte[],int)>|_ZN8ssd_safe14checkSystemOut14println2StringEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void print2Object(byte[],int)>|_ZN8ssd_safe14checkSystemOut12print2ObjectEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void print2String(byte[],int)>|_ZN8ssd_safe14checkSystemOut12print2StringEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void print2Boolean(byte[],int)>|_ZN8ssd_safe14checkSystemOut13print2BooleanEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void print2Char(byte[],int)>|_ZN8ssd_safe14checkSystemOut10print2CharEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void print2CharArray(byte[],int)>|_ZN8ssd_safe14checkSystemOut15print2CharArrayEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void print2Double(byte[],int)>|_ZN8ssd_safe14checkSystemOut12print2DoubleEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void print2Float(byte[],int)>|_ZN8ssd_safe14checkSystemOut11print2FloatEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void print2Int(byte[],int)>|_ZN8ssd_safe14checkSystemOut9print2IntEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void print2Long(byte[],int)>|_ZN8ssd_safe14checkSystemOut10print2LongEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void printf2Locale(byte[],int)>|_ZN8ssd_safe14checkSystemOut13printf2LocaleEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void printf2String(byte[],int)>|_ZN8ssd_safe14checkSystemOut13printf2StringEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void write2Byte(byte[],int)>|_ZN8ssd_safe14checkSystemOut10write2ByteEJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void write2Byte2(byte[],int)>|_ZN8ssd_safe14checkSystemOut11write2Byte2EJvP6JArrayIcEi|V|2|I
+<ssd_safe.checkSystemOut: void write2Int(byte[],int)>|_ZN8ssd_safe14checkSystemOut9write2IntEJvP6JArrayIcEi|V|2|I
+
+<ssd_safe.riskAudit: void <init>()>|_ZN8ssd_safe9riskAuditC1Ev|V|0|C
+<ssd_safe.riskAudit: void checkOut(java.lang.String)>|_ZN8ssd_safe9riskAudit8checkOutEJvPN4java4lang6StringE|V|1|I
+<ssd_safe.riskAudit: void checkErr(java.lang.String)>|_ZN8ssd_safe9riskAudit8checkErrEJvPN4java4lang6StringE|V|1|I
+<ssd_safe.riskAudit: void checkStorage(java.lang.String)>|_ZN8ssd_safe9riskAudit12checkStorageEJvPN4java4lang6StringE|V|1|I
+<ssd_safe.riskAudit: void checkIPCPipeParent(java.lang.String)>|_ZN8ssd_safe9riskAudit18checkIPCPipeParentEJvPN4java4lang6StringE|V|1|I
+<ssd_safe.riskAudit: void checkIPCPipeChild(java.lang.String)>|_ZN8ssd_safe9riskAudit17checkIPCPipeChildEJvPN4java4lang6StringE|V|1|I
+<ssd_safe.riskAudit: void checkIPCSocketParent(java.lang.String)>|_ZN8ssd_safe9riskAudit20checkIPCSocketParentEJvPN4java4lang6StringE|V|1|I
+<ssd_safe.riskAudit: void checkIPCSocketChild(java.lang.String)>|_ZN8ssd_safe9riskAudit19checkIPCSocketChildEJvPN4java4lang6StringE|V|1|I
+

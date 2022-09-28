@@ -1,0 +1,14 @@
+NODE|start
+NODE|output_first
+NODE|file_positioning_2
+NODE|end
+NODE|input_first
+NODE|file_positioning
+EDGE|start|input_first|unistd: size_t fwrite(const void, size_t, size_t, FILE)|none|none|none|139
+EDGE|input_first|file_positioning|unistd: int fseek(FILE, long int, int)|none|none|none|90
+EDGE|file_positioning|end|unistd: size_t fread(void, size_t, FILE)|none|none|none|90
+EDGE|start|output_first|unistd: size_t fread(void, size_t, size_t, FILE)|none|none|none|138
+EDGE|output_first|file_positioning_2|unistd: int fseek(FILE, long int, int)|none|none|none|90
+EDGE|file_positioning_2|end|unistd: size_t fwrite(const void, size_t, size_t, FILE)|none|none|none|90
+EDGE|output_first|end|size_t fwrite(const void, size_t, size_t, FILE)|none|none|FIO39-C|140
+EDGE|input_first|end|unistd: size_t fread(void, size_t, size_t, FILE)|none|none|FIO39-C|140

@@ -1,0 +1,44 @@
+[
+    {
+        "category": "VUL",
+        "language": "c",
+        "rule_code": "INT35-C",
+        "rule_name_eng": "Use correct integer precisions",
+        "rule_name_cn": "",
+        "rule_desc_eng": "Due to padding bits, be careful about taking care of integer precision",
+        "rule_desc_cn": "",
+        "rule_detail_eng": "### Abstract \n\n### Explanation \n\n### Example - avoid \n\n###Example - prefer \n",
+        "rule_detail_cn": "",
+        "msg_template_eng": "you have used sizeof function to get the size of integer data type",
+        "msg_template_cn": "",
+        "severity": "HIGH",
+        "likelihood": "LIKELY",
+        "remediation_cost": "HIGH",
+        "path": {
+            "1": "sizeof function called",
+            "2": "...",
+            "3": "..."
+            }
+    },
+
+    {
+        "category": "VUL",
+        "language": "java",
+        "rule_code": "NUM00-J",
+        "rule_name_eng": "Detect or prevent integer overflow",
+        "rule_name_cn": "",
+        "rule_desc_eng": "Any mathematical should not allow integer overflow",
+        "rule_desc_cn": "",
+        "rule_detail_eng": "### Abstract \n\n### Explanation \n\n### Example - avoid \n\n###Example - prefer \n",
+        "rule_detail_cn": "",
+        "msg_template_eng": "operation has forced integer overflow",
+        "msg_template_cn": "",
+        "severity": "HIGH",
+        "likelihood": "PROBABLE",
+        "remediation_cost": "LOW",
+        "path": {
+            "1": "operation used",
+            "2": "..."
+        }
+    }
+]

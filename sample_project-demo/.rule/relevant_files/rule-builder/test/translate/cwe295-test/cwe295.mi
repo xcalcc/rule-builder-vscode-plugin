@@ -1,0 +1,12 @@
+NODE|START
+NODE|init
+NODE|ssl_connect
+NODE|verified
+NODE|END
+EDGE|START|init|org.apache.commons.mail.SimpleEmail: void <init>()|none|this()|none
+EDGE|init|ssl_connect|org.apache.commons.mail.Email: org.apache.commons.mail.Email setSSLOnConnect(boolean)|arg(1)|this()|none
+EDGE|ssl_connect|verified|org.apache.commons.mail.Email: org.apache.commons.mail.Email setSSLCheckServerIdentity(boolean)|arg(1)|this()|none
+EDGE|verified|END|org.apache.commons.mail.Email: java.lang.String send()|none|this()|none
+EDGE|init|END|org.apache.commons.mail.Email: java.lang.String send()|none|this()|CWE295
+EDGE|ssl_connect|END|org.apache.commons.mail.Email: java.lang.String send()|none|this()|CWE295
+DECLARE|CWE295|CUSTOM|SSL Not Verified

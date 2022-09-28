@@ -1,0 +1,11 @@
+NODE|START
+NODE|END
+NODE|init
+NODE|state1
+EDGE|START|init|ssd_safe.App: void <init>()|none|this()|none
+EDGE|init|state1|ssd_safe.App: void checkNonssdata()|none|this()|none
+EDGE|state1|END|ssd_safe.App: void checkSsdata()|none|this()|none
+EDGE|init|END|ssd_safe.App: void checkSsdata()|none|this()|FUNCIN
+DEF_ACTION|init|FUNCIN
+DEF_ACTION|state1|FUNCIN
+DECLARE|FUNCIN|CUSTOM|FUNCIN CUSTOM DESCRIPTION

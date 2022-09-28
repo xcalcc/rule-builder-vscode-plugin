@@ -1,0 +1,179 @@
+#!/usr/bin/python3
+
+'''
+rbuild
+automation of rule compilation
+input: fsm rule file + dependency
+output: .a and .o file / .udr
+'''
+
+import argparse
+import os
+import sys
+import subprocess
+import shutil
+from lib import get_log
+
+logger = get_log()
+rb_loc = os.path.abspath(os.path.dirname(__file__))
+
+def get_file(path):
+    return os.path.join(rb_loc, path)
+
+def main(in_files, dep_files, udr=False, name=None):
+    ''' main function
+    in_files: rule files in list
+    dep_files: dependency files in raw string
+    '''
+    logger.debug('location: %s'%rb_loc)
+     
+    #### VALIDATION
+    for f in in_files:
+        if not os.path.exists(f):
+            logger.error('%s not found'% f)
+            exit(-1)
+    if dep_files:
+        dep_files = dep_files.split(':')
+        for f in dep_files:
+            if not os.path.exists(f):
+                logger.error('%s not found'%f)
+                exit(-1)
+    else:
+        dep_files = [get_file('lib/rt.jar')]
+    main_jar = dep_files[0]
+
+    logger.debug('validation check pass')
+    logger.debug('input files: %s'%in_files)
+    logger.debug('dependency files: %s'%dep_files)
+
+    #### FILE STORAGE
+    err_file = os.path.basename(in_files[0]) # get basename only
+    err_name = err_file.split('.')[0]
+    logger.debug('file name: %s'%err_name) # file name becomes path name
+    err_dir_path = get_file('rules/%s'%err_name)
+    if name:
+        err_dir_path = get_file('rules/%s'%name) # if specifiy dir name
+
+    if os.path.exists(err_dir_path):
+        subprocess.call(['rm', '-r', err_dir_path])
+    os.makedirs(err_dir_path) # delete and create new
+    logger.debug('path: %s'%err_dir_path)
+
+    #### STRUCTURING
+
+    err_rule_dir = os.path.join(err_dir_path, 'rule')
+    err_depn_dir = os.path.join(err_dir_path, 'depn')
+    err_scan_dir = os.path.join(err_dir_path, 'scan')
+    os.makedirs(err_rule_dir)
+    os.makedirs(err_depn_dir)
+    os.makedirs(err_scan_dir)
+
+    
+    for f in dep_files:
+        shutil.copyfile(f, 
+        os.path.join(err_depn_dir, os.path.basename(f))
+        ) # copy dependencies to depn/
+    logger.debug('depencies copied to %s'%err_depn_dir)
+    
+    for f in in_files:
+        shutil.copyfile(
+            f,
+            os.path.join(err_rule_dir, os.path.basename(f))
+        ) # copy rule files to rule/
+    logger.debug('rule files copied to %s'%err_rule_dir)
+    
+    #### RESOURCE GENERATION
+    fsm_gen_script = get_file('lib/fsm_generate.py')
+    logger.debug('source generation script path: %s'%fsm_gen_script)
+    subprocess.call(
+        [
+            fsm_gen_script,
+            os.path.join(err_rule_dir, err_file)
+        ]
+    )
+    subprocess.call(
+        [
+            'cp', '-R',
+            'output/',
+            err_dir_path
+        ]
+    ) # copy output/ dir to the err directory 
+
+    logger.debug("resource generation successful")
+    err_output_dir = os.path.join(err_dir_path, 'output')
+    for f in in_files:
+        logger.debug(f)
+        shutil.copyfile(
+            f,
+            os.path.join(err_output_dir, os.path.basename(f)+'.rule')
+        ) # copy rule file to output/ (and add .rule)
+
+    #### COMPILE
+    compile_script = get_file('lib/compile.sh')
+    logger.debug('compile script located at: %s'%compile_script)
+    subprocess.call(
+        [
+            compile_script,
+            err_output_dir 
+        ]
+    ) # compile rule files into .a / .udr
+    # TODO: when ask for .udr file, change the file name to .udr
+    compile_status = subprocess.call(
+        [
+            'mv',
+            os.path.join(err_output_dir, 'user_def_rule.a'),
+            err_scan_dir
+        ]
+    ) # move .a file to scan/
+    
+    if compile_status != 0:
+        logger.debug("compilation failure")
+        exit(-1)
+    logger.debug("compilation successful")
+
+    #### LIBRARY CREATE/USE
+    logger.debug('main_jar = %s'%main_jar)
+    if os.path.basename(main_jar) == 'rt.jar':
+        logger.debug('no extra dependency file, use rt.o instead')
+    else:
+        xvsa_dir = os.environ['XVSA_HOME']
+        logger.debug('xvsa path: %s'%xvsa_dir)
+        mapfej_script = os.path.join(xvsa_dir, 'lib/1.0/mapfej')
+        logger.debug('mapfej script: %s'%mapfej_script)
+        cmd = [mapfej_script, "-VTABLE=true"] # building command with list
+
+        for f in os.listdir(err_depn_dir):
+            path_f = os.path.join(err_depn_dir, f)
+            if os.path.basename(f) == os.path.basename(main_jar):
+                cmd += ['-fC,%s'%path_f]
+            else:
+                cmd += ['-cp=%s'%path_f]
+        cmd += ["-fB,lib.o"]
+
+        logger.debug(' '.join(cmd))
+        subprocess.call(cmd) # execute to generate .o file
+        
+        subprocess.call(
+            [
+                'mv',
+                'lib.o',
+                err_scan_dir
+            ]
+        ) # move lib.o file to scan/
+
+
+
+if __name__ == "__main__":
+    # argument parsing
+    parser = argparse.ArgumentParser(description='builder')
+    parser.add_argument('files', nargs='+', help='input.mi file')
+    parser.add_argument('-j', help='dependency files')
+    parser.add_argument('--udr', help='generate .udr', action='store_true')
+    parser.add_argument('--name', help='error name')
+    args = parser.parse_args()
+
+    logger.info('rule compilation')
+
+    # files
+    main(args.files, args.j, args.udr, args.name)
+

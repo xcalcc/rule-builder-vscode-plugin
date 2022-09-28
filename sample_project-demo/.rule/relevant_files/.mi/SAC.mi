@@ -1,0 +1,7 @@
+NODE|start
+NODE|critical section
+NODE|end
+EDGE|start|critical section|pthread: int pthread_mutex_lock(pthread_mutex_t *)|none|none|none|143
+EDGE|critical section|end|pthread: int pthread_mutex_unlock(pthread_mutex_t*)|none|none|none|144
+EDGE|critical section|end|unistd: unsigned int sleep(unsigned int sleep(unsigned int)|none|none|SAC|145
+DEF_ACTION|critical section|SAC|146

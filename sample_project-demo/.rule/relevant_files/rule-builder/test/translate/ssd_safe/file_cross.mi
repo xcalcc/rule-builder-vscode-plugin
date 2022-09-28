@@ -1,0 +1,12 @@
+NODE|start|none|this|start
+NODE|ssd_safe.App: void <init>()|none|this|a
+NODE|ssd_safe.App: java.lang.String readssd2(java.lang.String)|none|this|b
+NODE|ssd_safe.riskAudit: void checkOut(java.lang.String)|none|this|c
+NODE|end|none|this|end
+EDGE|start|a|none
+EDGE|a|b|none
+EDGE|b|c|none
+EDGE|c|end|none
+EDGE|a|c|FILECROSS
+EDGE|a|end|FILECROSS
+EDGE|b|end|FILECROSS

@@ -1,0 +1,3 @@
+[submodule "rule-builder/src/ruleBuildService/commondef"]
+	path = rule-builder/src/ruleBuildService/commondef
+	url = http://gitlab-address/python-common-def.git

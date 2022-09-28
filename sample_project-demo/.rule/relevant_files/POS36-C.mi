@@ -1,0 +1,9 @@
+NODE|start
+NODE|guid
+NODE|suid
+NODE|ggid
+NODE|end
+EDGE|start|guid|unistd.h: __uid_t getuid (void)|none|none|none|1010
+EDGE|guid|suid|unistd.h: int setuid (__uid_t)|none|none|none|1010
+EDGE|suid|ggid|unistd.h: __gid_t getgid (void)|none|none|none|1011
+EDGE|ggid|end|unistd.h: int setgid (__gid_t)|none|none|none|1011

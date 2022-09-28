@@ -1,0 +1,5 @@
+NODE|START
+NODE|uid
+NODE|END
+EDGE|START|uid|unistd: int setuid(uid_t)|none|none|none
+EDGE|uid|END|unistd: int setgid(gid_t)|none|none|POS36-C

@@ -1,0 +1,132 @@
+[
+	{
+		"id": "1008",
+		"msg_cn": "90",
+		"msg_en": "90"
+	},
+	{
+		"id": "1010",
+		"msg_cn": "136",
+		"msg_en": "136"
+	},
+	{
+		"id": "1011",
+		"msg_cn": "137",
+		"msg_en": "137"
+	},
+	{
+		"id": "1134",
+		"msg_cn": "listen socket in wrong order",
+		"msg_en": "listen socket in wrong order"
+	},
+	{
+		"id": "1135",
+		"msg_cn": "socket option allowed multi-binds to same port",
+		"msg_en": "socket option allowed multi-binds to same port"
+	},
+	{
+		"id": "1136",
+		"msg_cn": "only user-level privilege acquired",
+		"msg_en": "only user-level privilege acquired"
+	},
+	{
+		"id": "1137",
+		"msg_cn": "superuser privilege acquired",
+		"msg_en": "superuser privilege acquired"
+	},
+	{
+		"id": "1138",
+		"msg_cn": "input stream opened",
+		"msg_en": "input stream opened"
+	},
+	{
+		"id": "1139",
+		"msg_cn": "output stream opened",
+		"msg_en": "output stream opened"
+	},
+	{
+		"id": "1140",
+		"msg_cn": "input and output stream alternated",
+		"msg_en": "input and output stream alternated"
+	},
+	{
+		"id": "1141",
+		"msg_cn": "system received data from external system",
+		"msg_en": "system received data from external system"
+	},
+	{
+		"id": "1142",
+		"msg_cn": "byte encoding not fixed",
+		"msg_en": "byte encoding not fixed"
+	},
+	{
+		"id": "1143",
+		"msg_cn": "enter mutex locked region",
+		"msg_en": "enter mutex locked region"
+	},
+	{
+		"id": "1144",
+		"msg_cn": "exit mutex locked region",
+		"msg_en": "exit mutex locked region"
+	},
+	{
+		"id": "1145",
+		"msg_cn": "thread went to sleep",
+		"msg_en": "thread went to sleep"
+	},
+	{
+		"id": "1146",
+		"msg_cn": "never exited mutex locked region",
+		"msg_en": "never exited mutex locked region"
+	},
+	{
+		"id": "1147",
+		"msg_cn": "environment not saved",
+		"msg_en": "environment not saved"
+	},
+	{
+		"id": "1000",
+		"msg_cn": "no message",
+		"msg_en": "no message"
+	},
+	{
+		"id": "1001",
+		"msg_cn": "path_msg_4",
+		"msg_en": "path_msg_4"
+	},
+	{
+		"id": "1002",
+		"msg_cn": "path_msg2",
+		"msg_en": "path_msg2"
+	},
+	{
+		"id": "1003",
+		"msg_cn": "msg1",
+		"msg_en": "msg1"
+	},
+	{
+		"id": "1004",
+		"msg_cn": "msg3",
+		"msg_en": "msg3"
+	},
+	{
+		"id": "1005",
+		"msg_cn": "msg2",
+		"msg_en": "msg2"
+	},
+	{
+		"id": "1006",
+		"msg_cn": "msg4",
+		"msg_en": "msg4"
+	},
+	{
+		"id": "1007",
+		"msg_cn": "path_msg3",
+		"msg_en": "path_msg3"
+	},
+	{
+		"id": "1009",
+		"msg_cn": "path_msg1",
+		"msg_en": "path_msg1"
+	}
+]

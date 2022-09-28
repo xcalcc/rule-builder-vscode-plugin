@@ -1,0 +1,22 @@
+NODE|START
+NODE|END
+NODE|s1
+NODE|s2
+NODE|s3
+NODE|s4
+NODE|s5
+NODE|s6
+EDGE|START|s1|ssd_safe.App: void <init>()|none|this()|none
+EDGE|s1|s2|ssd_safe.App: java.lang.String readssd2(java.lang.String)|none|this()|none
+EDGE|s2|s2|ssd_safe.App: java.lang.String readssd2(java.lang.String)|none|this()|none
+EDGE|s2|s3|ssd_safe.App: void checkNonssdata()|none|this()|none
+EDGE|s1|s4|ssd_safe.App: void checkNonssdata()|none|this()|URULE01
+EDGE|START|s5|ssd_safe.App: java.lang.String readssd2(java.lang.String)|not(pre_call(ssd_safe.App: void <init>()))|this()|URULE04
+EDGE|START|s6|ssd_safe.App: void checkNonssdata()|not(pre_call(ssd_safe.App: void <init>()))|this()|URULE05
+DEF_ACTION|s1|URULE02
+DEF_ACTION|s2|URULE03
+DECLARE|URULE01|CUSTOM|DEFAULT
+DECLARE|URULE02|CUSTOM|DEFAULT
+DECLARE|URULE03|CUSTOM|DEFAULT
+DECLARE|URULE04|CUSTOM|DEFAULT
+DECLARE|URULE05|CUSTOM|DEFAULT

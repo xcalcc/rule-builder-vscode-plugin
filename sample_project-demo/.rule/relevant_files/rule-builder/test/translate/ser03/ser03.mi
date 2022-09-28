@@ -1,0 +1,7 @@
+NODE|START
+NODE|END
+NODE|init
+TAG|<Point: void <init>(double,double)>|this()|sensitive
+EDGE|START|init|java.io.ObjectOutputStream: void <init>(java.io.OutputStream)|none|this()|none
+EDGE|init|END|java.io.ObjectOutputStream: void writeObject(java.lang.Object)|not(is_tag_attr_set(arg(1),"sensitive","sanitize_data"))|this()|SER03
+EDGE|init|END|java.io.ObjectOutputStream: void writeObject(java.lang.Object)|is_tag_attr_set(arg(1), "sensitive", "sanitize_data")|this()|none

@@ -1,0 +1,118 @@
+#!/usr/bin/python3
+
+#============
+# rscan
+# lightweight scanner used to test
+# whether a rule has been
+# succesfully implemented
+#============
+
+import argparse
+import sys
+import os
+import subprocess
+import logging
+from lib import logger
+
+logger = logger.get_log()
+
+logger.debug("=========RSCAN==========")
+# ======= Arguments Parsing ========
+parser = argparse.ArgumentParser(description="xvsa scan")
+parser.add_argument('input', nargs='+', help='source code')
+parser.add_argument('rule', help='Intended rule')
+ 
+args = parser.parse_args()
+
+inputs = args.input
+
+# ======== Validation =============
+
+# check input exist
+for i in inputs:
+    if not os.path.exists(i):
+        logger.error("file %s not found"%(i))
+        sys.exit(1)
+
+rule = args.rule
+rb_loc = subprocess.run(['which', 'rbuild'], stdout=subprocess.PIPE, universal_newlines=True)
+if rb_loc.returncode != 0:
+    logger.error("RBNotFound: Rule Builder is not found, you may not have included it in environment PATH") 
+    sys.exit(1)
+
+rb_loc = rb_loc.stdout.strip()
+rb_loc = os.path.dirname(rb_loc) 
+logger.debug("Rule builder location: %s"%(rb_loc))
+
+if not os.path.exists(os.path.join(rb_loc,'rules/'+args.rule)):
+    logger.error("You have not created the rule %s"%(args.rule))
+    sys.exit(1)
+
+logger.debug("Scanning with %s"%(args.rule))
+
+rule_dir = os.path.join(rb_loc,'rules/'+args.rule)
+logger.debug("Your intended rule directory is in: %s"%(rule_dir))
+
+# ======= Clear out Classes ========
+rule_dir_class = os.path.join(rule_dir, 'classes/')
+if os.path.isdir(rule_dir_class):
+    logger.debug("Classes directory is found in %s"%(rule_dir_class))
+    cmd = os.system("rm -r "+rule_dir_class)     
+    logger.debug("Class directory cleared")
+os.system("mkdir "+rule_dir_class)
+logger.debug("Create new directory")
+
+
+rule_dir_depn = os.path.join(rule_dir, 'depn/')
+logger.debug("dependency directory %s"%(rule_dir_depn))
+deps = os.listdir(rule_dir_depn)
+logger.info("Here are your dependency files: %s"%(deps))
+
+# executing javac
+if len(deps) == 0:
+    cmd = "javac -d %s"%(rule_dir_class)
+    for i in inputs:
+        cmd += " "+i
+    logger.info("%s"%(cmd))
+    status = os.system(cmd)
+else:
+    cmd = "javac -d %s"%(rule_dir_class)
+    for i in inputs:
+        cmd += " "+i
+    cmd += " -cp"
+    deps_path = [os.path.join(rule_dir_depn, i) for i in deps]  
+    cmd += " " + ":".join(deps_path)
+    logger.info("%s"%(cmd))
+    status = os.system(cmd)
+
+if not status == 0:
+    os.error("Compilation unsuccessful") 
+    sys.exit(2)
+else:
+    logger.info("Compilation successful")
+
+# get all class files
+class_files = os.popen('find '+ rule_dir_class + " -name '*.class'").read()
+class_files = class_files.split('\n')[:-1]
+logger.debug("The class files are %s"%(class_files))
+
+# run xvsa
+cmd = "xvsa"
+for i in class_files:
+    cmd += " "+ i
+
+for d in deps:
+    cmd += " -Wf,-cp="+os.path.join(rule_dir_depn, d)
+
+
+# find .a, rt.o and attach -VSA:certj=1
+cmd += " "+os.path.join(rule_dir, 'scan/user_def_rule.a')
+cmd += " -VSA:certj=1 " + os.path.join(rb_loc, 'lib/rt.o')
+
+if os.path.isfile(os.path.join(rule_dir, 'scan/lib.o')):
+    cmd += " "+os.path.join(rule_dir, 'scan/lib.o')
+
+
+logger.info(cmd)
+
+os.system(cmd)

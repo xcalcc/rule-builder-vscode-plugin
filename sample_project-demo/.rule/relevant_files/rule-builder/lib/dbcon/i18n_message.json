@@ -1,0 +1,29 @@
+{
+    "locale": "en" ,
+    "message_key": "rule.Xcalibyte.CUSTOMIZED.1.CWE295.name" ,
+    "content": "SSL not verified" ,
+    "created_by": "system" ,
+    "modified_by": "system" 
+}
+
+{
+    "locale": "en" ,
+    "message_key": "rule.Xcalibyte.CUSTOMIZED.1.CWE295.description" ,
+    "content": "User does not verify the SSL before connecting" ,
+    "created_by": "system" ,
+    "modified_by": "system" 
+}
+{
+    "locale": "en" ,
+    "message_key": "rule.Xcalibyte.CUSTOMIZED.1.CWE295.detail" ,
+    "content": "-default detail-" ,
+    "created_by": "system" ,
+    "modified_by": "system" 
+}
+{
+    "locale": "en" ,
+    "message_key": "rule.Xcalibyte.CUSTOMIZED.1.CWE295.msg_template" ,
+    "content": "-default message template-" ,
+    "created_by": "system" ,
+    "modified_by": "system" 
+}
